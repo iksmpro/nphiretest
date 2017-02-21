@@ -16,6 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from . import views
+
 urlpatterns = [
+    url(r'^getstatus/', views.get_sms_status),
+    url(r'^sendsms/', views.send_sms),
     url(r'^admin/', admin.site.urls),
 ]
