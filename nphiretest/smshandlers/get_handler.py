@@ -7,7 +7,7 @@ def get_handler(handler_name: str) -> AbstractHandler:
         instance = cls()
         params = ConfigClass.get_params(handler_name)
         if params:
-            instance.__dict__.update()
+            instance.__dict__.update(params)
         return instance
     else:
         raise LookupError("No such handler with name %s"%handler_name)
